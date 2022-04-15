@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       spacing:{
-        '25':'100px'
+        '25':'100px',
+        '2.5':'10px'
       },
       fontSize:{
         'smr3':[
