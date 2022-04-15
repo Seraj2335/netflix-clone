@@ -1,13 +1,13 @@
 
-import React, { Component } from 'react';
+import React  from 'react';
 import requests from './request';
 import Row from './row';
-
+import Banner from './banner';
 
         function FirstComponent(){
             return (
                <div>
-                  
+                   <Banner/>
                    <Row title="Netflix Originals" isLargeRow fetchUrl={`https://api.themoviedb.org/3${requests.fetchNetflixOriginal}`}/>
                    <Row title="Netflix Trending" fetchUrl={`https://api.themoviedb.org/3${requests.fetchTrending}`}/>
                    <Row title="Top Rated" fetchUrl={`https://api.themoviedb.org/3${requests.fetchTopRated}`}/>

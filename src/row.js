@@ -18,18 +18,23 @@ function Row({title,fetchUrl,isLargeRow}){
 
     
     return (
-       <div className=' object-contain px-5 bg-black'>
-         <h1 className=' text-2xl font-bold'>{title}</h1>
-         <div className='flex my-4 overflow-scroll scrollbar-hide overflow-y-hidden px-5'>
-           {
-             movies.map(e=>{
-               return <img key={e.id} src={`${baseUrl+e.poster_path}`} alt={e.name} className={`${isLargeRow ?'mr-2.5 w-full max-h-25 ':'h-25 w-40'} transition transform hover:scale-110`}/>
-             })
-           }
-         </div>
-       </div>
+      <div className=' object-contain px-5 bg-black'>
+      <h1 className=' text-2xl font-bold text-white'>{title}</h1>
+      <div className='flex py-4 overflow-scroll scrollbar-hide overflow-y-hidden px-5 '>
+        {
+          movies.map(e=>{
+            return  <img key={e.id} src={`${baseUrl+e.poster_path}`} alt={e.name} 
+            className={`${isLargeRow ?' w-full max-h-96 ':'h-25 w-64 '} transition transform hover:scale-105 mr-2.5`}/> 
+          })
+        }
+      </div>
+    </div>
     );
 }
 
  
 export default Row;
+
+
+
+
