@@ -6,8 +6,11 @@ import Banner from './banner';
 
         function FirstComponent(){
             return (
-               <div>
-                   <Banner/>
+               <div className='bg-black'>
+               
+                <Banner/>
+               
+                
                    <Row title="Netflix Originals" isLargeRow fetchUrl={`https://api.themoviedb.org/3${requests.fetchNetflixOriginal}`}/>
                    <Row title="Netflix Trending" fetchUrl={`https://api.themoviedb.org/3${requests.fetchTrending}`}/>
                    <Row title="Top Rated" fetchUrl={`https://api.themoviedb.org/3${requests.fetchTopRated}`}/>

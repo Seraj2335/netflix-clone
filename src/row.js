@@ -9,7 +9,7 @@ function Row({title,fetchUrl,isLargeRow}){
      async function fetchData(){
        const request = await axios.get(fetchUrl);
        setMovies(request.data.results)
-       console.log(request.data.results)
+      
          return request;
      }
      fetchData();
@@ -18,13 +18,13 @@ function Row({title,fetchUrl,isLargeRow}){
 
     
     return (
-      <div className=' object-contain px-5 bg-black'>
-      <h1 className=' text-2xl font-bold text-white'>{title}</h1>
+      <div className='  px-5 bg-black my-auto'>
+      <h1 className=' text-xl font-semibold text-white'>{title}</h1>
       <div className='flex py-4 overflow-scroll scrollbar-hide overflow-y-hidden px-5 '>
         {
           movies.map(e=>{
             return  <img key={e.id} src={`${baseUrl+e.poster_path}`} alt={e.name} 
-            className={`${isLargeRow ?' w-full max-h-96 ':'h-25 w-64 '} transition transform hover:scale-105 mr-2.5`}/> 
+            className={`${isLargeRow ?' w-full md:max-h-96 max-h-64 ':'h-25 w-64 '} transition transform hover:scale-105 mr-2.5`}/> 
           })
         }
       </div>

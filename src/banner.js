@@ -7,27 +7,41 @@ function Banner(){
     const baseUrl ='https://image.tmdb.org/t/p/original/';
    useEffect(()=>{
        async function fetchData(){
-           const request = await axios.get(`${baseUrl}+${requests.fetchNetflixOriginal}`);
-          console.log(request.data.results+ 'Your Result')
+           const request = await axios.get(`https://api.themoviedb.org/3${requests.fetchNetflixOriginal}`);
+         
            setMovies(request.data.results[Math.floor(Math.random()*request.data.results.length)]);
            return requests;
        }
      fetchData();
    },[]);
 
-  console.log( 'Movies Details'+movie);
+  
 
-    return <header>
-        <h1>Title</h1>
-        <div className='flex'>
-            <button>Play</button>
-            <button>Log in</button>
+    return (
+        <header className='px-4 py-4 mb-4  banner h-112 bg-cover bg-center ' style={{
+            backgroundImage: `url(${baseUrl}${movie?.backdrop_path})`,
+         
+          
+        
+        }}>
+        <div >
+            {/* <img  src={`${baseUrl}${movie?.backdrop_path}`} alt="header image" className=''/> */}
+            <div className='  ml-8 pt-12  h-32 absolute top-20 left-0 '>
+        <h1 className='text-white  font-semibold pb-0.3 text-3'>{movie?.title || movie?.name || movie?.original_name}</h1>
+        <div className='flex '>
+            <button className='text-white'>Play</button>
+            <button>My List</button>
 
         </div>
-        <p>
-            Decsription
+        <p className='text-white'>
+           {movie?.overview}
         </p>
-    </header>
+        </div>
+        </div>
+        </header>
+        );
+        
+   
 }
- 
+
 export default Banner;
