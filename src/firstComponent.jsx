@@ -1,44 +1,18 @@
 
 import React, { Component } from 'react';
-import Ui from './ui';
+import requests from './request';
+import Row from './row';
 
 
-class FirstComponent extends Component {
-
-    state={
-       count:10,
-        isLoading:true,
-        item:{}
-    };
-
-    
-   async componentDidMount(){
-
-    const response = await fetch(`https://api.themoviedb.org/3${fetchTrending}`);
-
-     const jsonData= await response.json();
-     this.setState({
-         item:jsonData.data,
-         isLoading:false
-       
-     });
-  console.log(this.item['genres']);
-    
- }
-
-
-    render() { 
-        return (
-            <div>
-                {
-                    
-                       <Ui/>
-                }
-           
-            </div>
-        );
-    }
-}
+        function FirstComponent(){
+            return (
+               <div>
+                  
+                   <Row title="Netflix Originals" fetchUrl={`https://api.themoviedb.org/3${requests.fetchNetflixOriginal}`}/>
+                   <Row title="Netflix Trending" fetchUrl={`https://api.themoviedb.org/3${requests.fetchTrending}`}/>
+               </div>
+            );
+        }
  
 export default FirstComponent;
   
