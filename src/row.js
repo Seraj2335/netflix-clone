@@ -18,13 +18,13 @@ function Row({title,fetchUrl,isLargeRow}){
 
     
     return (
-      <div className='  px-5 bg-black my-auto'>
+      <div className='  px-5 bg-black my-auto '>
       <h1 className=' text-xl font-semibold text-white'>{title}</h1>
-      <div className='flex py-4 overflow-scroll scrollbar-hide overflow-y-hidden px-5 '>
+      <div className='flex py-4  px-5  overflow-x-auto scrollbar-hide overflow-y-hidden '>
         {
           movies.map(e=>{
             return  <img key={e.id} src={`${baseUrl+e.poster_path}`} alt={e.name} 
-            className={`${isLargeRow ?' w-full md:max-h-96 max-h-64 ':'h-25 w-64 '} transition transform hover:scale-105 mr-2.5`}/> 
+            className={`${isLargeRow ?'  md:max-h-84 max-h-64 transition transform hover:scale-110':'max-h-32 max-w-xs '} transition transform hover:scale-105  mr-2.5`}/> 
           })
         }
       </div>

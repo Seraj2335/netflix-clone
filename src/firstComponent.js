@@ -3,15 +3,17 @@ import React  from 'react';
 import requests from './request';
 import Row from './row';
 import Banner from './banner';
+import Nav from './nav';
 
         function FirstComponent(){
             return (
                <div className='bg-black'>
+               <Nav />
                
                 <Banner/>
                
                 
-                   <Row title="Netflix Originals" isLargeRow fetchUrl={`https://api.themoviedb.org/3${requests.fetchNetflixOriginal}`}/>
+                   <Row title="NETFLIX ORIGINALS" isLargeRow fetchUrl={`https://api.themoviedb.org/3${requests.fetchNetflixOriginal}`}/>
                    <Row title="Netflix Trending" fetchUrl={`https://api.themoviedb.org/3${requests.fetchTrending}`}/>
                    <Row title="Top Rated" fetchUrl={`https://api.themoviedb.org/3${requests.fetchTopRated}`}/>
                    <Row title="Action Movies" fetchUrl={`https://api.themoviedb.org/3${requests.fetchActionMovies}`}/>
